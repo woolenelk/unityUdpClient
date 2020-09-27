@@ -16,16 +16,18 @@ public class NetworkMan : MonoBehaviour
     public UdpClient udp;
     public GameObject prefab;
     public Dictionary<string, GameObject> currentPlayers = new Dictionary<string, GameObject>();
+    
     public List<string> SpawningPlayers;
     public List<string> DestroyingPlayers;
 
     // Start is called before the first frame update
     void Start()
     {
+
         udp = new UdpClient();
         
-		//udp.Connect("18.188.244.109", 12345);
-        udp.Connect("localhost",12345);
+		udp.Connect("18.188.244.109", 12345);
+        //udp.Connect("localhost",12345);
 
         Byte[] sendBytes = Encoding.ASCII.GetBytes("connect");
       
@@ -193,7 +195,7 @@ public class NetworkMan : MonoBehaviour
             }
             else
             {
-                //SpawningPlayers.Add(lastestGameState.players[i].id);
+                SpawningPlayers.Add(lastestGameState.players[i].id);
             }
         }
         
@@ -210,7 +212,7 @@ public class NetworkMan : MonoBehaviour
             }
             else if (currentPlayers.ContainsKey(s))
             {
-                currentPlayers[s].SetActive(false);
+                //currentPlayers[s].SetActive(false);
                 Destroy(currentPlayers[s]);
                 UnityEngine.Debug.Log("Remove Player from List: " + currentPlayers.Remove(s));
             }
@@ -237,16 +239,6 @@ public class NetworkMan : MonoBehaviour
         SpawnPlayers();
         UpdatePlayers();
         DestroyPlayers();
-        //if (Input.GetKey(KeyCode.L))
-        //{
-        //    OnDestroy();
-        //    foreach (KeyValuePair<string, GameObject> player in currentPlayers)
-        //    {
-        //        GameObject temp = player.Value;
-        //        currentPlayers.Remove(player.Key);
-        //        Destroy(temp);
-        //    }
-        //}
     }
 
     void OnApplicationQuit()
