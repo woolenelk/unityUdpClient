@@ -20,5 +20,6 @@ public class NetworkID : MonoBehaviour
         Renderer renderer = GetComponent<Renderer>();
         renderer.material.color = color;
         transform.position = cubePosition;
+
     }
 }

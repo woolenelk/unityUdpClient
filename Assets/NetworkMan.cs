@@ -119,7 +119,7 @@ public class NetworkMan : MonoBehaviour
                     break;
                 case commands.DROPPED_CLIENT:
                     UnityEngine.Debug.Log("DROPPED CLIENT:" + returnData);
-                    //DestroyPlayers(latestMessage.id);
+
                     UnityEngine.Debug.Log("<<>" + latestMessage.id + "<<>returndata");
                     DestroyingPlayers.Add(latestMessage.id);
                     break;
@@ -239,6 +239,27 @@ public class NetworkMan : MonoBehaviour
         SpawnPlayers();
         UpdatePlayers();
         DestroyPlayers();
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            Byte[] sendBytes = Encoding.ASCII.GetBytes("CubeUp");
+            udp.Send(sendBytes, sendBytes.Length);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            Byte[] sendBytes = Encoding.ASCII.GetBytes("CubeDown");
+            udp.Send(sendBytes, sendBytes.Length);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            Byte[] sendBytes = Encoding.ASCII.GetBytes("CubeLeft");
+            udp.Send(sendBytes, sendBytes.Length);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            Byte[] sendBytes = Encoding.ASCII.GetBytes("CubeRight");
+            udp.Send(sendBytes, sendBytes.Length);
+        }
     }
 
     void OnApplicationQuit()
