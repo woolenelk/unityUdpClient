@@ -160,6 +160,24 @@ MonoBehaviour:
     id: 
   lastestGameState:
     players: []
+  spawningPlayer:
+    id: 
+    color:
+      R: 0
+      G: 0
+      B: 0
+    position:
+      X: 0
+      Y: 0
+  despawningPlayer:
+    id: 
+    color:
+      R: 0
+      G: 0
+      B: 0
+    position:
+      X: 0
+      Y: 0
 --- !u!4 &408600481
 Transform:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ public class NetworkMan : MonoBehaviour
     {
 
         udp = new UdpClient();
-        
+
 		udp.Connect("18.188.244.109", 12345);
         //udp.Connect("localhost",12345);
 
@@ -136,17 +136,6 @@ public class NetworkMan : MonoBehaviour
         socket.BeginReceive(new AsyncCallback(OnReceived), socket);
     }
 
-    //void SpawnPlayers()
-    //{
-    //    for (int i = 0; i < lastestGameState.players.Length; i++)
-    //    {
-    //        if (!currentPlayers.ContainsKey(lastestGameState.players[i].id))
-    //        {
-    //            currentPlayers.Add(lastestGameState.players[i].id, Instantiate(prefab, new Vector3(lastestGameState.players[i].position.X, lastestGameState.players[i].position.Y, 0), Quaternion.identity));
-    //            currentPlayers[lastestGameState.players[i].id].GetComponent<NetworkID>().Id = lastestGameState.players[i].id;
-    //        }
-    //    }
-    //}
 
     void SpawnPlayers()
     {
