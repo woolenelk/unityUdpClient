@@ -21,6 +21,7 @@ public class NetworkMan : MonoBehaviour
     public List<string> DestroyingPlayers;
 
     private string myID = "";
+    private int updatePacketRate = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class NetworkMan : MonoBehaviour
 
         InvokeRepeating("HeartBeat", 1, 1);
 
-        InvokeRepeating("UpdatePosition", 1, 1);
+        InvokeRepeating("UpdatePosition", 1, 1.0f/updatePacketRate);
 
 
     }
