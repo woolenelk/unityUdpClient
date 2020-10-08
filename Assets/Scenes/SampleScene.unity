@@ -435,6 +435,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1039119364425489918, guid: 7f2f2ac1313571348a51005f7f81fc58,
+        type: 3}
+      propertyPath: cubePosition.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8545484202081240259, guid: 7f2f2ac1313571348a51005f7f81fc58,
         type: 3}
       propertyPath: m_Name
@@ -448,7 +453,7 @@ PrefabInstance:
     - target: {fileID: 8545484202081240263, guid: 7f2f2ac1313571348a51005f7f81fc58,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.39
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8545484202081240263, guid: 7f2f2ac1313571348a51005f7f81fc58,
         type: 3}

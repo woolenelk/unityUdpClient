@@ -8,6 +8,7 @@ public class NetworkID : MonoBehaviour
     public string Id;
     public Color color = new Color(0, 0, 0);
     public Vector3 cubePosition = new Vector3(0,0,0);
+    public bool clientCube = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,8 @@ public class NetworkID : MonoBehaviour
     {
         Renderer renderer = GetComponent<Renderer>();
         renderer.material.color = color;
-        transform.position = cubePosition;
+        if (!clientCube)
+            transform.position = cubePosition;
 
     }
 }
