@@ -28,8 +28,8 @@ public class NetworkMan : MonoBehaviour
 
         udp = new UdpClient();
 
-		//udp.Connect("18.188.244.109", 12345);
-        udp.Connect("localhost",12345);
+		udp.Connect("18.188.244.109", 12345);
+        //udp.Connect("localhost",12345);
 
         UpdateMessage message = new UpdateMessage();
         message.cmd = "connect";
